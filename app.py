@@ -4,8 +4,9 @@ import traceback
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
-
 import warnings
+import pickle
+
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -14,8 +15,6 @@ try:
     from joblib import load as joblib_load
 except Exception:
     joblib_load = None
-
-import pickle
 
 APP_PORT = int(os.environ.get("PORT", 5000))
 
